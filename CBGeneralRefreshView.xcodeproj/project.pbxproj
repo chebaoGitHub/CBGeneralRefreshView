@@ -15,6 +15,9 @@
 		6E0D36641CACF76400B875B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E0D36621CACF76400B875B2 /* LaunchScreen.storyboard */; };
 		6E0D366F1CACF76400B875B2 /* CBGeneralRefreshViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D366E1CACF76400B875B2 /* CBGeneralRefreshViewTests.m */; };
 		6E0D367A1CACF76400B875B2 /* CBGeneralRefreshViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D36791CACF76400B875B2 /* CBGeneralRefreshViewUITests.m */; };
+		6E0D368D1CACF92200B875B2 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D368C1CACF92200B875B2 /* FirstViewController.m */; };
+		6E66FD1E1CBA882200AB6785 /* CBRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E66FD1B1CBA882200AB6785 /* CBRefreshHeaderView.m */; };
+		6E66FD1F1CBA882200AB6785 /* UIScrollView+HeaderRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E66FD1D1CBA882200AB6785 /* UIScrollView+HeaderRefresh.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		6E0D36751CACF76400B875B2 /* CBGeneralRefreshViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CBGeneralRefreshViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E0D36791CACF76400B875B2 /* CBGeneralRefreshViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBGeneralRefreshViewUITests.m; sourceTree = "<group>"; };
 		6E0D367B1CACF76400B875B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E0D368B1CACF92200B875B2 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		6E0D368C1CACF92200B875B2 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		6E66FD1A1CBA882200AB6785 /* CBRefreshHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBRefreshHeaderView.h; sourceTree = "<group>"; };
+		6E66FD1B1CBA882200AB6785 /* CBRefreshHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBRefreshHeaderView.m; sourceTree = "<group>"; };
+		6E66FD1C1CBA882200AB6785 /* UIScrollView+HeaderRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+HeaderRefresh.h"; sourceTree = "<group>"; };
+		6E66FD1D1CBA882200AB6785 /* UIScrollView+HeaderRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+HeaderRefresh.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +114,10 @@
 				6E0D36581CACF76400B875B2 /* AppDelegate.m */,
 				6E0D365A1CACF76400B875B2 /* ViewController.h */,
 				6E0D365B1CACF76400B875B2 /* ViewController.m */,
+				6E66FD191CBA882200AB6785 /* CBRefresh */,
 				6E0D365D1CACF76400B875B2 /* Main.storyboard */,
+				6E0D368B1CACF92200B875B2 /* FirstViewController.h */,
+				6E0D368C1CACF92200B875B2 /* FirstViewController.m */,
 				6E0D36601CACF76400B875B2 /* Assets.xcassets */,
 				6E0D36621CACF76400B875B2 /* LaunchScreen.storyboard */,
 				6E0D36651CACF76400B875B2 /* Info.plist */,
@@ -138,6 +150,17 @@
 				6E0D367B1CACF76400B875B2 /* Info.plist */,
 			);
 			path = CBGeneralRefreshViewUITests;
+			sourceTree = "<group>";
+		};
+		6E66FD191CBA882200AB6785 /* CBRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				6E66FD1A1CBA882200AB6785 /* CBRefreshHeaderView.h */,
+				6E66FD1B1CBA882200AB6785 /* CBRefreshHeaderView.m */,
+				6E66FD1C1CBA882200AB6785 /* UIScrollView+HeaderRefresh.h */,
+				6E66FD1D1CBA882200AB6785 /* UIScrollView+HeaderRefresh.m */,
+			);
+			path = CBRefresh;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,8 +293,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E66FD1E1CBA882200AB6785 /* CBRefreshHeaderView.m in Sources */,
 				6E0D365C1CACF76400B875B2 /* ViewController.m in Sources */,
+				6E66FD1F1CBA882200AB6785 /* UIScrollView+HeaderRefresh.m in Sources */,
 				6E0D36591CACF76400B875B2 /* AppDelegate.m in Sources */,
+				6E0D368D1CACF92200B875B2 /* FirstViewController.m in Sources */,
 				6E0D36561CACF76400B875B2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +524,7 @@
 				6E0D36801CACF76400B875B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E0D36811CACF76400B875B2 /* Build configuration list for PBXNativeTarget "CBGeneralRefreshViewTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +533,7 @@
 				6E0D36831CACF76400B875B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E0D36841CACF76400B875B2 /* Build configuration list for PBXNativeTarget "CBGeneralRefreshViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +542,7 @@
 				6E0D36861CACF76400B875B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
