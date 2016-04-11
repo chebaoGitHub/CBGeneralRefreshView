@@ -12,7 +12,7 @@
 #import "CBRefreshHeaderView.h"// the header of refresh
 
 static char CBHeaderRefreshView;
-static char CBHeaderRefreshViewSize;
+//static char CBHeaderRefreshViewSize;
 
 
 @interface UIScrollView ()
