@@ -10,10 +10,11 @@
 
 #import "FirstViewController.h"//没有使用xib的Controller
 #import "UIScrollView+HeaderRefresh.h"
+#import "UIScrollView+FooterRefresh.h"
 //#import "CBRefresh.h"
 
 
-@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource,CBRefreshHeaderViewDelegate,CBRefreshFooterViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *table;
 
 @end
@@ -42,7 +43,10 @@
         [image addObject:[NSString stringWithFormat:@"%d",i+1]];
     }
     
-    [self.table addRefreshHeader:image];
+    //refresh view
+    [self.table addRefreshHeader:image delegate:self];
+    [self.table addRefreshFooter:image delegate:self];
+    
 }
 
 
@@ -61,8 +65,17 @@
 //    FirstViewController * vc = [[FirstViewController alloc] init];
 //    [self.navigationController pushViewController:vc animated:YES];
     [self.table stopHeaderAnimating];
+    [self.table stopFooterAnimating];
+    
 }
 
+-(void)refreshTheTableHeader{
+    NSLog(@"%s",__FUNCTION__);
+}
+
+-(void)refreshTheTableFooter{
+    NSLog(@"%s",__FUNCTION__);
+}
 
 #pragma mark- view controller
 -(BOOL)prefersStatusBarHidden{

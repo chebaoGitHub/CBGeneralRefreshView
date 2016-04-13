@@ -9,35 +9,25 @@
 #import "UIScrollView+HeaderRefresh.h"
 #import <objc/runtime.h>
 
-#import "CBRefreshHeaderView.h"// the header of refresh
-#import "CBRefreshSizeDefine.h"
+
 
 static char CBHeaderRefreshView;
-//static char CBHeaderRefreshViewSize;
-
-
-@interface UIScrollView ()
-
-
-@end
-
-
-
 
 
 @implementation UIScrollView (HeaderRefresh)
 
-- (void)addRefreshHeader:(NSArray *)imageNames{
+- (void)addRefreshHeader:(NSArray *)imageNames delegate:(UIViewController<CBRefreshHeaderViewDelegate> * )delegate{
     
     if (!self.headerView) {
         
         CBRefreshHeaderView * view = [[CBRefreshHeaderView alloc] initWithFrame:CGRectMake(0, -HEADER_HEIGHT, self.frame.size.width, HEADER_HEIGHT) loadingImages:imageNames];
         self.headerView = view;
         self.headerView.scrollView = self;
+        self.headerView.refreshDelegate = delegate;
         [self addSubview:view];
         
         self.isShowRefreshHeaderView = YES;
-
+        
     }
     
 }
@@ -94,7 +84,8 @@ static char CBHeaderRefreshView;
 }
 
 -(void)stopHeaderAnimating{
-    [self.headerView stopHeaderAnimating];
+//    [self.headerView stopHeaderAnimating];
+    self.headerView.refreshState = CBRefreshStateStopped;
 }
 
 @end

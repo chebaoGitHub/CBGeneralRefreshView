@@ -13,4 +13,14 @@
 #define HEADER_LOADING_HEIGHT 34
 #define HEADER_LOADING_WIDTH 34
 
+#define FOOTER_HEIGHT 100
+#define FOOTER_LOADING_HEIGHT 34
+#define FOOTER_LOADING_WIDTH 34
+
+typedef NS_ENUM(NSUInteger, CBRefreshState) {
+    CBRefreshStateStopped = 0,
+    CBRefreshStateTriggered = 1,
+    CBRefreshStateLoading = 2
+};
+
 #endif /* CBRefreshSizeDefine_h */

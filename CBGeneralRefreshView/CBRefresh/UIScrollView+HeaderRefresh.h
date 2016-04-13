@@ -8,20 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+#import "CBRefreshHeaderView.h"// the header of refresh
+#import "CBRefreshSizeDefine.h"
 
-@class CBRefreshHeaderView;
 
 @interface UIScrollView (HeaderRefresh)
 
-- (void)addRefreshHeader:(NSArray *)imageNames;
+- (void)addRefreshHeader:(NSArray *)imageNames delegate:(UIViewController<CBRefreshHeaderViewDelegate> * )delegate;
 -(void)stopHeaderAnimating;
 
 
 @property (nonatomic, strong) CBRefreshHeaderView * headerView;
 
-
 //public
 @property (nonatomic, assign) BOOL isShowRefreshHeaderView;//是否显示headerView
-
 
 @end
