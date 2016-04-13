@@ -8,13 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+
 @class CBRefreshHeaderView;
 
 @interface UIScrollView (HeaderRefresh)
 
 - (void)addRefreshHeader:(NSArray *)imageNames;
+-(void)stopHeaderAnimating;
+
+
 @property (nonatomic, strong) CBRefreshHeaderView * headerView;
 
-//@property (nonatomic, assign) CGSize headerViewSize;
+
+//public
+@property (nonatomic, assign) BOOL isShowRefreshHeaderView;//是否显示headerView
+
 
 @end

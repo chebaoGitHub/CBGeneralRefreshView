@@ -36,14 +36,19 @@
 
 
 - (void)viewDidLayoutSubviews{
-    [self.table addRefreshHeader:nil];
-//    self.table.headerView;
+    
+    NSMutableArray * image = [[NSMutableArray alloc] init];
+    for (int i = 0; i < 24 ; i++) {
+        [image addObject:[NSString stringWithFormat:@"%d",i+1]];
+    }
+    
+    [self.table addRefreshHeader:image];
 }
 
 
 #pragma mark- table
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    return 20;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -55,6 +60,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 //    FirstViewController * vc = [[FirstViewController alloc] init];
 //    [self.navigationController pushViewController:vc animated:YES];
+    [self.table stopHeaderAnimating];
 }
 
 
